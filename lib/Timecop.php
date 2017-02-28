@@ -38,8 +38,8 @@ class Timecop
             'return Timecop::gmdate($format, $timestamp);',
         ),
         'gmmktime' => array(
-            '$hour = NULL, $minute = NULL, $second = NULL, $month = NULL, $day = NULL, $year = NULL, $is_dst = -1',
-            'return Timecop::gmmktime($hour, $minute, $second, $month, $day, $year, $is_dst);',
+            '$hour = NULL, $minute = NULL, $second = NULL, $month = NULL, $day = NULL, $year = NULL',
+            'return Timecop::gmmktime($hour, $minute, $second, $month, $day, $year);',
         ),
         'gmstrftime' => array(
             '$format, $timestamp = NULL',
@@ -54,8 +54,8 @@ class Timecop
             'return Timecop::localtime($timestamp, $isAssociative);',
         ),
         'mktime' => array(
-            '$hour = NULL, $minute = NULL, $second = NULL, $month = NULL, $day = NULL, $year = NULL, $is_dst = -1',
-            'return Timecop::mktime($hour, $minute, $second, $month, $day, $year, $is_dst);',
+            '$hour = NULL, $minute = NULL, $second = NULL, $month = NULL, $day = NULL, $year = NULL',
+            'return Timecop::mktime($hour, $minute, $second, $month, $day, $year);',
         ),
         'strftime' => array(
             '$format, $timestamp = NULL',
@@ -251,8 +251,8 @@ class Timecop
         );
     }
 
-    public static function gmmktime($hour = NULL, $minute = NULL, $second = NULL, 
-        $month = NULL, $day = NULL, $year = NULL, $is_dst = -1) 
+    public static function gmmktime($hour = NULL, $minute = NULL, $second = NULL,
+        $month = NULL, $day = NULL, $year = NULL)
     {
         if ($hour   == NULL) $hour   = self::gmdate('H');
         if ($minute == NULL) $minute = self::gmdate('i');
@@ -263,7 +263,7 @@ class Timecop
 
         return call_user_func(
             self::getFunctionAlias('gmmktime'),
-            $hour, $minute, $second, $month, $day, $year, $is_dst
+            $hour, $minute, $second, $month, $day, $year
         );
     }
 
@@ -291,8 +291,8 @@ class Timecop
         );
     }
 
-    public static function mktime($hour = NULL, $minute = NULL, $second = NULL, 
-        $month = NULL, $day = NULL, $year = NULL, $is_dst = -1) 
+    public static function mktime($hour = NULL, $minute = NULL, $second = NULL,
+        $month = NULL, $day = NULL, $year = NULL)
     {
         if ($hour   == NULL) $hour   = self::date('H');
         if ($minute == NULL) $minute = self::date('i');
@@ -303,7 +303,7 @@ class Timecop
 
         return call_user_func(
             self::getFunctionAlias('mktime'),
-            $hour, $minute, $second, $month, $day, $year, $is_dst
+            $hour, $minute, $second, $month, $day, $year
         );
     }
 
