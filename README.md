@@ -55,6 +55,16 @@ Requires `runkit` PECL module to override PHP internal functions. Current pecl v
 does not work with PHP 5.2+ therefore I recommend you to compile your own from sources.
 
 Sources in PHP svn haven't been worked on for a while now so grab ones on the github instead:
+For php >= 7.0, a different fork must be used. (This fork does not support php 5)
+
+    $ git clone https://github.com/runkit7/runkit7
+    $ cd ./runkit
+    $ phpize
+    $ ./configure && make
+    $ make test
+    $ make install
+
+For php 5.x (TODO: Restore `$is_dst` param)
 
     $ git clone https://github.com/zenovich/runkit
     $ cd ./runkit
