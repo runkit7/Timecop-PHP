@@ -18,8 +18,8 @@ Timecop-PHP provides wrappers around date/time functions:
 
 You can override built-in functions in cases where it's not possible to replace
 parts of code using PHP's built-in functions like time() or date() with Timecop wrappers.
-To do so `runkit` pecl extension must be installed and working. See installation
-section for more details.
+To do so `runkit` pecl extension (or runkit7/runkit7 fork) must be installed and working.
+See installation section for more details.
 
 ## Usage
     // override internal PHP functions
@@ -50,12 +50,9 @@ section for more details.
     // restore original PHP functionality
     Timecop::unwarpTime();
 
-## Installation
-Requires `runkit` PECL module to override PHP internal functions. Current pecl version
-does not work with PHP 5.2+ therefore I recommend you to compile your own from sources.
+## Installation and Configuration
 
-Sources in PHP svn haven't been worked on for a while now so grab ones on the github instead:
-For php >= 7.0, a different fork must be used. (This fork does not support php 5)
+For php >= 7.0, a different fork must be used. (the runkit pecl does not support php 5)
 
     $ git clone https://github.com/runkit7/runkit7
     $ cd ./runkit
@@ -73,10 +70,11 @@ For php 5.x (TODO: Restore `$is_dst` param)
     $ make test
     $ make install
 
-Note: make test failed and/or skipped every test on CentOS 5 with 64bit PHP 5.2.10 but
-Timecop still worked. YMMV.
-
-You need to enable runkit extension and override flag in php.ini:
+You need to enable runkit extension and override flag in `php.ini`:
 
     extension=runkit.so
     runkit.internal_override = 1
+
+## Examples
+
+See [tests/ReadmeTest.php](tests/ReadmeTest.php)
