@@ -1,4 +1,6 @@
 # Timecop-PHP
+[![Build Status](https://travis-ci.org/runkit7/Timecop-PHP.svg?branch=master)](https://travis-ci.org/runkit7/Timecop-PHP)
+
 Time testing php library inspired by [ruby timecop gem](https://github.com/travisjeffery/timecop).
 
 Timecop-PHP provides wrappers around date/time functions:
