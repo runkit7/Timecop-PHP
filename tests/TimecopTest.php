@@ -11,6 +11,7 @@ class TimecopTest extends PHPUnit_Framework_TestCase
 
     public function tearDown()
     {
+        parent::tearDown();
         Timecop::restore();
     }
 
@@ -194,7 +195,7 @@ class TimecopTest extends PHPUnit_Framework_TestCase
         Timecop::travel($this->time + 3600);
 
         Timecop::warpTime();
-        $got = gmmktime($hour, $minute, $second, $month, $day, $year, $isDst);
+        $got = gmmktime($hour, $minute, $second, $month, $day, $year);
         Timecop::unwarpTime();
 
         $this->assertEquals($result, $got);
