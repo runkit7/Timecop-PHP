@@ -1,6 +1,8 @@
 # Timecop-PHP
 [![Build Status](https://travis-ci.org/runkit7/Timecop-PHP.svg?branch=master)](https://travis-ci.org/runkit7/Timecop-PHP)
 
+Supports php 7.0-7.2.
+
 Time testing php library inspired by [ruby timecop gem](https://github.com/travisjeffery/timecop).
 
 Timecop-PHP provides wrappers around date/time functions:
@@ -80,3 +82,9 @@ You need to enable runkit extension and override flag in `php.ini`:
 ## Examples
 
 See [tests/ReadmeTest.php](tests/ReadmeTest.php)
+
+## Running tests
+
+```sh
+php -d runkit.internal_override=1 vendor/bin/phpunit
+```

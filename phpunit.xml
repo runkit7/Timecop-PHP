@@ -1,0 +1,30 @@
+<phpunit
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/5.0/phpunit.xsd"
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="false"
+        convertWarningsToExceptions="false"
+        stopOnError="true"
+        stopOnFailure="false"
+        stopOnIncomplete="false"
+        stopOnSkipped="false"
+        stopOnRisky="false"
+        verbose="false">
+
+    <php>
+		<!-- must be set in php.ini or php -d runkit.internal_override=1 vendor/bin/phpunit -->
+		<!-- <ini name="runkit.internal_override" value="1" /> -->
+		<ini name="error_reporting" value="E_ALL&amp;~E_NOTICE&amp;~E_DEPRECATED" /> -->
+    </php>
+    <testsuites>
+        <testsuite name="all">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
